@@ -1,5 +1,10 @@
 # Change Log
 
+## Unreleased
+
+* Remove deprecated functions `time` and `spec`. Use the record fields `evTime` and `evSpec` of the `Event` record instead.
+* Remove deprecated record `CapEvent`. The type `CapEvent` combined an `Event` record with a capability, but every `Event` record now contains an `evCap` field which contains the capability.
+
 ## 0.19.0.1 - 2023-04-13
 
 * Update for GHC 9.6 ([#93](https://github.com/haskell/ghc-events/pull/93))

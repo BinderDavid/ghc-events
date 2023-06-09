@@ -48,7 +48,7 @@ module GHC.RTS.Events (
        serialiseEventLog,
 
        -- * Utilities
-       CapEvent(..), sortEvents,
+       sortEvents,
        buildEventTypeMap,
 
        -- * Printing
@@ -60,12 +60,7 @@ module GHC.RTS.Events (
 
        -- * Perf events
        nEVENT_PERF_NAME, nEVENT_PERF_COUNTER, nEVENT_PERF_TRACEPOINT,
-       sz_perf_num, sz_kernel_tid,
-
-       -- * For compatibility with old clients
-       -- readEventLogFromFile, TODO
-       spec,
-       time,
+       sz_perf_num, sz_kernel_tid
   ) where
 
 {- Libraries. -}

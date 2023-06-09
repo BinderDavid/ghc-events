@@ -131,14 +131,6 @@ data Event =
     evCap :: Maybe Int
   } deriving Show
 
-{-# DEPRECATED time "The field is now called evTime" #-}
-time :: Event -> Timestamp
-time = evTime
-
-{-# DEPRECATED spec "The field is now called evSpec" #-}
-spec :: Event -> EventInfo
-spec = evSpec
-
 data EventInfo
 
   -- pseudo events
@@ -592,16 +584,6 @@ mkCapsetType n = case n of
  2 -> CapsetOsProcess
  3 -> CapsetClockDomain
  _ -> CapsetUnknown
-
--- | An event annotated with the Capability that generated it, if any
-{-# DEPRECATED CapEvent "CapEvents will be removed soon, now Event has a field evCap" #-}
-data CapEvent
-  = CapEvent { ce_cap   :: Maybe Int,
-               ce_event :: Event
-               -- we could UNPACK ce_event, but the Event constructor
-               -- might be shared, in which case we could end up
-               -- increasing the space usage.
-             } deriving Show
 
 --sync with ghc/parallel/PEOpCodes.h
 data MessageTag
